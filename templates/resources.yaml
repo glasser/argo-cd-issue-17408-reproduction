@@ -15,8 +15,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: reproduction
-  annotations:
-    restart-when-token-changes: {{ .Values.token }}
 spec:
   replicas: 3
   selector:
@@ -26,6 +24,8 @@ spec:
     metadata:
       labels:
         name: reproduction
+      annotations:
+        restart-when-token-changes: {{ .Values.token }}
     spec:
       containers:
         - name: reproduction
