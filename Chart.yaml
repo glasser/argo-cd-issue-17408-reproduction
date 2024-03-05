@@ -1,0 +1,4 @@
+apiVersion: v2
+name: argo-cd-issue-17408-reproduction
+type: application
+version: 0.0.0
