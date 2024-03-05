@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: reproduction
 spec:
-  replicas: 2
+  replicas: 10
   selector:
     matchLabels:
       name: reproduction
@@ -45,7 +45,7 @@ spec:
                 command:
                   - /bin/sh
                   - '-c'
-                  - sleep 30
+                  - sleep 120
           livenessProbe:
             failureThreshold: 6
             httpGet:
