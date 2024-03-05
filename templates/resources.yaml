@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: reproduction
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
       name: reproduction
@@ -27,6 +27,7 @@ spec:
       annotations:
         restart-when-token-changes: {{ .Values.token }}
     spec:
+      terminationGracePeriodSeconds: 120
       containers:
         - name: reproduction
           image: nginx:1.25.3
