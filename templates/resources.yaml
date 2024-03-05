@@ -74,7 +74,7 @@ data:
       }
       }
   token.txt: {{ .Values.token }}
-  hook.sh: >
+  hook.sh: |
     #!/bin/bash
 
     set -e
