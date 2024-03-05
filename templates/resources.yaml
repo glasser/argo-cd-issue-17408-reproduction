@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: reproduction
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
       name: reproduction
