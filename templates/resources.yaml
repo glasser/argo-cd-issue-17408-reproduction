@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: reproduction
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       name: reproduction
@@ -40,22 +40,22 @@ spec:
                 command:
                   - /bin/sh
                   - '-c'
-                  - sleep 5
+                  - sleep 30
           livenessProbe:
             failureThreshold: 6
             httpGet:
               path: /
               port: 80
-            initialDelaySeconds: 5
-            periodSeconds: 5
+            initialDelaySeconds: 1
+            periodSeconds: 1
             timeoutSeconds: 5
           readinessProbe:
             failureThreshold: 6
             httpGet:
               path: /
               port: 80
-            initialDelaySeconds: 5
-            periodSeconds: 5
+            initialDelaySeconds: 1
+            periodSeconds: 1
             timeoutSeconds: 5
       volumes:
       - name: reproduction
