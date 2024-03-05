@@ -115,7 +115,6 @@ spec:
         - name: hook
           command:
             - /bin/bash
-            - '-c'
             - reproduction/hook.sh
           image: nginx:1.25.3  # It has curl too!
           volumeMounts:
